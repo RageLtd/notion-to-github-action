@@ -111,7 +111,7 @@ jobs:
           git push origin $MAJOR_VERSION --force
 
       - name: Create Release
-        uses: softprops/gh-release@v2
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.next }}
           name: Release ${{ steps.version.outputs.next }}
