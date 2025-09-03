@@ -84,12 +84,15 @@ jobs:
 
       - name: Create initial tag if none exists
         run: |
+          git fetch --tags
           if ! git tag -l | grep -q .; then
             echo "No tags found, creating initial 0.0.0 tag"
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git tag 0.0.0
             git push origin 0.0.0
+          else
+            echo "Tags already exist, skipping initial tag creation"
           fi
 
       - name: Get Next Version
