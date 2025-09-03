@@ -1,0 +1,40 @@
+{
+	"name": "notion-to-github-action",
+	"version": "1.0.0",
+	"description": "GitHub Action to sync Notion documents to GitHub wiki",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "bun run typecheck && bun build src/index.ts --outdir dist --target node --minify",
+		"test": "bun test",
+		"lint": "biome check src/",
+		"lint:fix": "biome check --apply src/",
+		"format": "biome format --write src/",
+		"package": "bun run build",
+		"typecheck": "tsc --noEmit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nathandevuono/notion-to-github-action.git"
+	},
+	"keywords": [
+		"notion",
+		"github",
+		"wiki",
+		"sync",
+		"action"
+	],
+	"author": "Nathan DeVuono",
+	"license": "MIT",
+	"dependencies": {
+		"@actions/core": "^1.11.1",
+		"@actions/github": "^6.0.1",
+		"@notionhq/client": "^4.0.2",
+		"@octokit/rest": "^22.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.2",
+		"@types/bun": "^1.2.21",
+		"@types/node": "^24.3.0",
+		"typescript": "^5.9.2"
+	}
+}

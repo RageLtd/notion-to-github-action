@@ -1,0 +1,37 @@
+name: 'Notion to GitHub Wiki Sync'
+description: 'Sync Notion documents and their children to GitHub repository wiki via webhook'
+author: 'RageLtd'
+
+inputs:
+  notion-api-token:
+    description: 'Notion API integration token'
+    required: true
+  notion-page-id:
+    description: 'Root Notion page ID to sync (extracted from webhook if not provided)'
+    required: true
+  github-token:
+    description: 'GitHub token with wiki write permissions'
+    required: true
+    default: ${{ github.token }}
+  wiki-path-prefix:
+    description: 'Optional path prefix for wiki pages'
+    required: false
+    default: ''
+  max-depth:
+    description: 'Maximum depth for recursive child page syncing'
+    required: false
+    default: '10'
+
+outputs:
+  pages-synced:
+    description: 'Number of pages successfully synced to wiki'
+  sync-status:
+    description: 'Overall sync operation status'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'book-open'
+  color: 'blue'
