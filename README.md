@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync Notion to Wiki
-        uses: nathandevuono/notion-to-github-action@v1
+        uses: RageLtd/notion-to-github-action@v1
         with:
           notion-api-token: ${{ secrets.NOTION_API_TOKEN }}
           notion-page-id: ${{ github.event.inputs.notion-page-id || github.event.client_payload.page_id }}
@@ -93,7 +93,7 @@ Trigger the action manually with a specific page ID:
 
 ```yaml
 - name: Sync Specific Page
-  uses: nathandevuono/notion-to-github-action@v1
+  uses: RageLtd/notion-to-github-action@v1
   with:
     notion-api-token: ${{ secrets.NOTION_API_TOKEN }}
     notion-page-id: '12345678-1234-1234-1234-123456789012'
@@ -114,7 +114,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync from Webhook
-        uses: nathandevuono/notion-to-github-action@v1
+        uses: RageLtd/notion-to-github-action@v1
         with:
           notion-api-token: ${{ secrets.NOTION_API_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -125,7 +125,7 @@ jobs:
 
 ```yaml
 - name: Sync with Custom Settings
-  uses: nathandevuono/notion-to-github-action@v1
+  uses: RageLtd/notion-to-github-action@v1
   with:
     notion-api-token: ${{ secrets.NOTION_API_TOKEN }}
     notion-page-id: ${{ inputs.page-id }}
@@ -225,10 +225,10 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/nathandevuono/notion-to-github-action/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/nathandevuono/notion-to-github-action/discussions)
-- 📖 **Documentation**: [Wiki](https://github.com/nathandevuono/notion-to-github-action/wiki)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/RageLtd/notion-to-github-action/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/RageLtd/notion-to-github-action/discussions)
+- 📖 **Documentation**: [Wiki](https://github.com/RageLtd/notion-to-github-action/wiki)
 
 ---
 
-Made with ❤️ by [Nathan DeVuono](https://github.com/nathandevuono)
+Made with ❤️ by [Nathan DeVuono](https://github.com/RageLtd)
