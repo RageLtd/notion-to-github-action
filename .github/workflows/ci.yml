@@ -99,6 +99,7 @@ jobs:
           token: ${{ github.token }}
           branch: main
           fallbackTag: "0.0.0"
+          noVersionBumpBehavior: "patch"
 
       - name: Configure Git
         run: |
