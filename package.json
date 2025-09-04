@@ -28,7 +28,7 @@
 	"dependencies": {
 		"@actions/core": "^1.11.1",
 		"@actions/github": "^6.0.1",
-		"@notionhq/client": "^4.0.2",
+		"@notionhq/client": "^5.0.0",
 		"@octokit/rest": "^22.0.0"
 	},
 	"devDependencies": {
